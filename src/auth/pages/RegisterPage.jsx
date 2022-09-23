@@ -9,15 +9,15 @@ import { startRegisterUserWithEmailPassword } from '../../store/auth/thunks';
 import { initializeUseSelector } from 'react-redux/es/hooks/useSelector';
 
 
+const datosDePrueba = {
+    email: '',
+    password: '',
+    displayName: ''
+};
 export const RegisterPage = () => {
 
   const dispatch = useDispatch();
 
-  const datosDePrueba = {
-      email: '',
-      password: '',
-      displayName: ''
-  };
 
   const { status, errorMessage } = useSelector( state => state.auth );
   const isCheckingAuthentication = useMemo( () => status === 'checking', [status] );
